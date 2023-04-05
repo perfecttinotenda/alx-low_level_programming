@@ -2,30 +2,31 @@
 
 
 /**
- * reverse_listint - reverses a linked list
- * @head: pointer to the first node in the list
+ * reverse_listint - reverses_list
+ * @head: Ngayi tarise_to_first_node
+ * Author: Perfect
  * Task 100
- * Return: pointer to the first node in the new list
+ * Return: (0) on Success or (1) on Fail
  */
 
 listint_t *reverse_listint(listint_t **head)
 {
-listint_t *prev = NULL;
+listint_t *preview = NULL;
 
-listint_t *next = NULL;
+listint_t *following = NULL;
 
 while (*head)
 {
-next = (*head)->next;
+following = (*head)->following;
 
-(*head)->next = prev;
+(*head)->following = preview;
 
-prev = *head;
+preview = *head;
 
-*head = next;
+*head = following;
 }
 
-*head = prev;
+*head = preview;
 
 return (*head);
 }

@@ -2,38 +2,38 @@
 
 
 /**
- * find_listint_loop - finds the loop in a linked list
- * @head: linked list to search for
- *
- * Return: address of the node where the loop starts, or NULL
+ * find_listint_loop - kusvaga ma links mu loop
+ * @head: MaLink aka Batanidzwa
+ * Author: Perfect
+ * Return: 0 on Success or 1 on Fail
  */
 
 listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *slow = head;
+listint_t *better = head;
 
-listint_t *fast = head;
+listint_t *best = head;
 
 if (!head)
 return (NULL);
 
-while (slow && fast && fast->next)
+while (better && best && best->next)
 {
-fast = fast->next->next;
+best = best->next->next;
 
-slow = slow->next;
+better = better->next;
 
-if (fast == slow)
+if (best == better)
 {
-slow = head;
+better = head;
 
-while (slow != fast)
+while (better != best)
 {
-slow = slow->next;
+better = better->next;
 
-fast = fast->next;
+best = best->next;
 }
-return (fast);
+return (best);
 }
 }
 return (NULL);

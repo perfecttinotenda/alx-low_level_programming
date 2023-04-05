@@ -2,45 +2,44 @@
 
 
 /**
- * insert_nodeint_at_index - inserts a new node in a linked list,
- * at a given position
- * @head: pointer to the first node in the list
- * @idx: index where the new node is added
- * @n: data to insert in the new node
- *
- * Return: pointer to the new node, or NULL
+ * insert_nodeint_at_index - inserts_new_node
+ * @head: Beginning_node
+ * @idx: index_node_is_added
+ * @n: data_new_node
+ * Author: Perfect 
+ * Return: (0) on Success or (1) on Fail
  */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i;
 
-	listint_t *new;
+	listint_t *nw;
 
-	listint_t *temp = *head;
+	listint_t *myself = *head;
 
-	new = malloc(sizeof(listint_t));
-	if (!new || !head)
+	nw = malloc(sizeof(listint_t));
+	if (!nw || !head)
 		return (NULL);
-	new->n = n;
-	new->next = NULL;
+	nw->n = n;
+	nw->next = NULL;
 
 	if (idx == 0)
 	{
-		new->next = *head;
-		*head = new;
-		return (new);
+		nw->next = *head;
+		*head = nw;
+		return (nw);
 	}
-	for (i = 0; temp && i < idx; i++)
+	for (i = 0; myself && i < idx; i++)
 	{
 		if (i == idx - 1)
 		{
-			new->next = temp->next;
-			temp->next = new;
-			return (new);
+			nw->next = myself->next;
+			myself->next = nw;
+			return (nw);
 		}
 		else
-			temp = temp->next;
+			myself = myself->next;
 	}
 	return (NULL);
 }

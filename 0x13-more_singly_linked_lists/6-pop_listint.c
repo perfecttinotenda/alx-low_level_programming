@@ -2,27 +2,27 @@
 
 
 /**
- * pop_listint - deletes the head node of a linked list
- * @head: pointer to the first element in the linked list
- *
- * Return: the data inside the elements that was deleted,
- * or 0 if the list is empty
+ * pop_listint - head_node
+ * @head: first_element
+ * Task 6
+ * Author: Perfect
+ * Return: (0) on Success or (1) on fail
  */
 
 int pop_listint(listint_t **head)
 {
-	listint_t *temp;
+	listint_t *myself;
 
-	int num;
+	int digit;
 
 	if (!head || !*head)
 		return (0);
-	num = (*head)->n;
-	temp = (*head)->next;
+	digit= (*head)->n;
+	myself = (*head)->next;
 
 	free(*head);
-	*head = temp;
+	*head = myself;
 
-	return (num);
+	return (digit);
 }
 

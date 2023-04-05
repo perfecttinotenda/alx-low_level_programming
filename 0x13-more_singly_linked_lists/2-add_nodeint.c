@@ -2,27 +2,27 @@
 
 
 /**
- * add_nodeint - adds a new node at the beginning of a linked list
- * @head: pointer to the first node in the list
+ * add_nodeint - new node 
+ * @head: first_node in the list
  * @n: data to insert in that new node
  *
- * Return: pointer to the new node, or NULL if it fails
+ * Return: (0) on Success and (1) fail
  */
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *new;
+	listint_t *nw;
 
-	new = malloc(sizeof(listint_t));
+	nw = malloc(sizeof(listint_t));
 
-	if (!new)
+	if (!nw)
 		return (NULL);
-	new->n = n;
+	nw->n = n;
 
-	new->next = *head;
+	nw->next = *head;
 
-	*head = new;
+	*head = nw;
 
-	return (new);
+	return (nw);
 }
 
