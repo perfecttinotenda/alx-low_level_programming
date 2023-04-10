@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * print_binary - print  binary equivalent to  decimal
  * @n: number to print in binary
@@ -11,7 +10,7 @@ void print_binary(unsigned long int n)
 {
 	int p, count = 0;
 
-        unsigned long int now;
+	unsigned long int now;
 
 	for (p = 63; p >= 0; p--)
 	{
