@@ -2,11 +2,11 @@
 
 /**
  * print_binary - print  binary equivalent to  decimal
- * @n: number to print in binary
+ * @num: number to print in binary
  * Return: 0
  */
 
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int num)
 {
 	int p, count = 0;
 
@@ -14,8 +14,8 @@ void print_binary(unsigned long int n)
 
 	for (p = 63; p >= 0; p--)
 	{
-		new = n >> p;
-		if (current & 1)
+		now = num >> p;
+		if (now & 1)
 		{
 			_putchar('1');
 			count++;
